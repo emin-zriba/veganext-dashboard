@@ -1,0 +1,16 @@
+/* navbar.component.css */
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .search-input {
+    background: transparent;
+    border: none;
+    color: white;
+  }

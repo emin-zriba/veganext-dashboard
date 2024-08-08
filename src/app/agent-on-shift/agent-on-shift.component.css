@@ -1,0 +1,18 @@
+.agent-card {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.agent-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.agent-details {
+  color: #fff;
+}

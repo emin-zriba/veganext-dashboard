@@ -1,0 +1,34 @@
+.dashboard-container {
+    flex: 1;
+    padding: 16px;
+    background-color: #121212;
+    color: #fff;
+    overflow-y: auto;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  
+  .stat-item {
+    background-color: #1e1e1e;
+    padding: 16px;
+    border-radius: 8px;
+    width: 48%;
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .stat-change {
+    color: #ff4c4c;
+  }
+  
+  .decrease {
+    color: #ff4c4c;
+  }
