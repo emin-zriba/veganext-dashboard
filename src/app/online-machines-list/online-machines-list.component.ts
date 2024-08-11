@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import { CommonModule } from '@angular/common';
 
 interface Machine {
   ip: string;
@@ -10,7 +15,9 @@ interface Machine {
 @Component({
   selector: 'app-online-machines-list',
   templateUrl: './online-machines-list.component.html',
-  styleUrls: ['./online-machines-list.component.css']
+  styleUrls: ['./online-machines-list.component.css'],
+  standalone: true,
+  imports: [MatIconModule, MatDividerModule, MatButtonModule, CommonModule, MatTableModule]
 })
 export class OnlineMachinesListComponent {
   machines: Machine[] = [
