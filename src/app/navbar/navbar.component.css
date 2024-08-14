@@ -1,16 +1,68 @@
-/* navbar.component.css */
+/* Navbar Styling */
 mat-toolbar {
+  background-color: #2a2a2a; /* Dark background for the navbar */
+  color: #eaeaea; /* Light text color for contrast */
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .navbar-content {
     display: flex;
-    justify-content: space-between;
-    padding: 0 16px;
+    align-items: center;
   }
-  
+
+  .navbar-logo {
+    height: 40px; /* Adjust the size of the logo */
+    margin-right: 20px; /* Space between the logo and other elements */
+  }
+
   .spacer {
-    flex: 1;
+    flex: 1; /* Pushes the search and settings to the right */
   }
-  
+
+  mat-icon {
+    color: #eaeaea; /* Icon color matching the text */
+    cursor: pointer;
+    margin-right: 10px; /* Space between icons and input */
+  }
+
   .search-input {
-    background: transparent;
+    background-color: #333333; /* Slightly lighter background for the input */
+    border-radius: 4px;
+    padding: 5px 10px;
+    color: #eaeaea;
     border: none;
-    color: white;
+    outline: none;
+    width: 200px; /* Adjust width as needed */
+    transition: width 0.3s ease;
+
+    &::placeholder {
+      color: #aaaaaa; /* Placeholder text color */
+    }
+
+    &:focus {
+      width: 250px; /* Expand input on focus */
+      background-color: #444444; /* Darker background on focus */
+    }
   }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 30px; /* Adjust logo size for smaller screens */
+  }
+
+  .search-input {
+    width: 150px; /* Adjust input width for smaller screens */
+
+    &:focus {
+      width: 180px; /* Adjust focus width for smaller screens */
+    }
+  }
+
+  mat-icon {
+    margin-right: 5px; /* Adjust icon spacing for smaller screens */
+  }
+}
