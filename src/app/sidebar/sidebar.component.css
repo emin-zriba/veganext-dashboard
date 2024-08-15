@@ -26,6 +26,7 @@ mat-nav-list {
 
 .profile-name {
   color: #eaeaea; /* Light text color for the name */
+  font-family: 'Lexend', sans-serif;
   font-size: 18px;
   font-weight: 600;
 }
@@ -33,6 +34,7 @@ mat-nav-list {
 /* Sidebar links */
 a[mat-list-item] {
   color: #eaeaea; /* Light text color */
+  font-family: 'Lexend', sans-serif;
   font-size: 16px;
   font-weight: 500;
   padding: 15px 20px; /* Padding for spacing */
@@ -72,6 +74,7 @@ a[mat-list-item].active {
   }
 
   .profile-name {
+    font-family: 'Lexend', sans-serif;
     font-size: 16px; /* Smaller font size for name */
   }
 

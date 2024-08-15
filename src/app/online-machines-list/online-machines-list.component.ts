@@ -28,7 +28,7 @@ export class OnlineMachinesListComponent {
     { ip: '192.168.1.5', hostname: 'Machine-E', os: 'Ubuntu', status: 'Online' },
   ];
 
-  displayedColumns: string[] = ['ip', 'hostname', 'os', 'status', 'actions'];
+  displayedColumns: string[] = ['ip', 'hostname', 'os', 'status'];
 
   viewMachine(machine: Machine) {
     console.log(`Viewing machine: ${machine.hostname}`);

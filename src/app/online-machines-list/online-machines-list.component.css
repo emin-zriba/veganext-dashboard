@@ -17,6 +17,7 @@ table {
       background-color: #333333; /* Slightly darker header background */
       color: #ffffff;
       text-align: left;
+      font-family: 'Lexend', sans-serif;
       font-weight: 600;
       font-size: 14px;
       text-transform: uppercase;
@@ -24,6 +25,7 @@ table {
     }
   
     td {
+      font-family: 'Lexend', sans-serif;
       font-size: 14px;
       color: #cccccc;
     }
@@ -64,6 +66,7 @@ table {
   @media (max-width: 768px) {
     th, td {
       padding: 10px;
+      font-family: 'Lexend', sans-serif;
       font-size: 12px; /* Smaller text for smaller screens */
     }
   
