@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MsalService } from '@azure/msal-angular';
-import { MsalProviderModule } from '../msal-module';
+import { MsalProviderModule } from '../msal-instance';
 import { AuthGuard } from '../auth.guard';
 
 

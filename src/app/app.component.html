@@ -1,10 +1,17 @@
-<div class="app-container">
+<div class="app-container" *ngIf="isAuthenticated; else loginPage">
   <app-navbar></app-navbar>
   <div class="content">
-    <app-sidebar *ngIf="isAuthenticated"></app-sidebar>
+    <app-sidebar></app-sidebar>
     <router-outlet></router-outlet>
   </div>
 </div>
+
+<!-- This block is shown when the user is not authenticated -->
+<ng-template #loginPage>
+  <app-login></app-login> <!-- Assuming you have a LoginComponent for unauthenticated users -->
+</ng-template>
+
+<!-- Preconnect to Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
