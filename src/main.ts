@@ -5,7 +5,7 @@ import { MsalModule, MsalGuardConfiguration, MsalInterceptorConfiguration } from
 import { InteractionType } from '@azure/msal-browser';
 import { MSALInstanceFactory } from './app/msal-instance';
 import { provideRouter } from '@angular/router';
-import { routes } from './app/app.routes'; // Make sure this path is correct
+import { routes } from './app/app.routes'; 
 
 const guardConfig: MsalGuardConfiguration = {
   interactionType: InteractionType.Redirect,

@@ -9,10 +9,11 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: MsalService, private router: Router) {}
 
   canActivate(): boolean {
-    if (this.authService.instance.getActiveAccount() != null) {
-      return true;
+    console.log('AuthGuard called');
+    if (!this.authService.instance.getActiveAccount()) {
+      this.router.navigate(['/login']);
+      return false;
     }
-    this.router.navigate(['/login']);
-    return false;
+    return true;
   }
 }
