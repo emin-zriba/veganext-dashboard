@@ -21,6 +21,7 @@ export class LoginComponent {
       .subscribe({
         next: (result) => {
           console.log('Login successful', result);
+          window.location.href = '/dashboard';
         },
         error: (error) => {
           console.error('Login failed', error);
