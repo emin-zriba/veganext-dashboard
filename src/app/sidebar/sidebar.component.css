@@ -1,0 +1,94 @@
+/* Sidebar container */
+mat-nav-list {
+  background-color: #2a2a2a; /* Dark background for the sidebar */
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #3d3d3d; /* Slightly lighter border */
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.profile-name {
+  color: #eaeaea; /* Light text color for the name */
+  font-family: 'Lexend', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Sidebar links */
+a[mat-list-item] {
+  color: #eaeaea; /* Light text color */
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px 20px; /* Padding for spacing */
+  text-decoration: none;
+  border-left: 4px solid transparent; /* Default border for inactive links */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for links */
+a[mat-list-item]:hover {
+  background-color: #3d3d3d; /* Slightly lighter background on hover */
+}
+
+/* Active link style */
+a[mat-list-item].active {
+  background-color: #1a1a1a; /* Darker background for the active link */
+  border-left: 4px solid #4caf50; /* Accent color for the active link */
+  color: #ffffff; /* Ensure text is white for active link */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  mat-nav-list {
+    flex-direction: row; /* Align items horizontally on smaller screens */
+    height: auto;
+  }
+
+  .profile-section {
+    padding: 10px; /* Reduce padding for smaller screens */
+    border-bottom: none; /* Remove border for horizontal layout */
+  }
+
+  .profile-pic {
+    width: 40px; /* Smaller profile picture on smaller screens */
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .profile-name {
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px; /* Smaller font size for name */
+  }
+
+  a[mat-list-item] {
+    flex: 1;
+    text-align: center; /* Center-align text */
+    padding: 10px 0; /* Reduce padding for smaller screens */
+    border-left: none; /* Remove left border for horizontal layout */
+    border-bottom: 4px solid transparent; /* Bottom border for active state */
+  }
+
+  /* Active link style for horizontal layout */
+  a[mat-list-item].active {
+    border-bottom: 4px solid #4caf50; /* Accent color for active link */
+    border-left: none;
+  }
+}

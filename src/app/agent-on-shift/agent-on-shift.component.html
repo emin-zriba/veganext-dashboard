@@ -1,0 +1,19 @@
+<!-- agent-on-shift.component.html -->
+<div *ngIf="currentAgent; else noAgent" class="agent-card">
+  <img [src]="currentAgent.avatar" alt="{{ currentAgent.name }}" class="agent-photo" />
+  <div class="agent-details">
+    <h3>{{ currentAgent.name }}</h3>
+    <p>Email: {{ currentAgent.email }}</p>
+    <p>Phone: {{ currentAgent.number }}</p>
+    <p>Shift Time: {{ currentAgent.shiftStart }}:00 - {{ currentAgent.shiftEnd }}:00</p>
+  </div>
+</div>
+
+<ng-template #noAgent>
+  <div class="agent-card">
+    <img src="assets/default-agent.jpg" alt="No Agent" class="agent-photo" />
+    <div class="agent-details">
+      <h3>No agent is currently on shift</h3>
+    </div>
+  </div>
+</ng-template>
