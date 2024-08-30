@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShiftService, Agent } from '../services/shift.service';  // Adjust the import path according to your project structure
+import { ShiftService, Agent } from '../services/shift.service'; 
 
 @Component({
   selector: 'app-agent-on-shift',
@@ -8,8 +8,7 @@ import { ShiftService, Agent } from '../services/shift.service';  // Adjust the 
   styleUrls: ['./agent-on-shift.component.css'],
   standalone: true,
   imports: [CommonModule],
-  providers: [ShiftService] // Add ShiftService as a provider if necessary
-
+  providers: [ShiftService] 
 })
 export class AgentOnShiftComponent implements OnInit {
   currentAgent: Agent | null = null;

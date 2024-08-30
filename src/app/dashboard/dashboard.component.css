@@ -1,5 +1,7 @@
 /* Dashboard Container */
 .dashboard-container {
+  height: 100vh; /* Make sure the container takes up the full viewport height */
+  width: 100vw;  /* Make sure the container takes up the full viewport width */
   padding: 20px;
   background-color: #1e1e1e;
   border-radius: 8px;
@@ -7,6 +9,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  box-sizing: border-box; /* Ensure padding is included in height and width calculations */
 }
 
 /* Stats Section */
@@ -14,6 +17,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  flex-grow: 1; /* Allow stats section to grow and fill available space */
 }
 
 /* Individual Stat Item */

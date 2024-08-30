@@ -1,3 +1,11 @@
-1 - Fix the issue with the redirection - Login -> /dashboard
-2 - impliment the services in the components : Agents 
-3 - Test the agents impl 
+1 - Fix the issue with the redirection - Login -> /dashboard - done 
+2 - impliment the services in the components : Agents - done 
+3 - Test the agents impl - done 
+
+
+==============
+1- add the css for the logout 
+2 - fix the session storage after logout 
+3 - add the logout url to azure : /login 
+4 - add side bar navigation - for existing page 
+5 - Add the service for the wazuh - Data 

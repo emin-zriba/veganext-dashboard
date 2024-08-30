@@ -48,4 +48,8 @@ export class AppComponent implements OnInit {
       this.router.navigate(['/dashboard']);
     }
   }
+
+  logout(): void {
+    this.msalService.instance.logoutRedirect();
+  }
 }
