@@ -50,6 +50,12 @@ export class AppComponent implements OnInit {
   }
 
   logout(): void {
-    this.msalService.instance.logoutRedirect();
+    // Clear session storage
+    sessionStorage.clear();
+
+    // Perform MSAL logout to clear cached tokens
+    this.msalService.logoutRedirect({
+      postLogoutRedirectUri: '/'
+    });
   }
 }

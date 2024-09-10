@@ -11,7 +11,34 @@
   gap: 20px;
   box-sizing: border-box; /* Ensure padding is included in height and width calculations */
 }
+/* Logout Button */
+.logout-button {
+  text-align: right;
+}
 
+.btn-logout {
+  background-color: #2a2a2a;
+  color: #eaeaea;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: 'Lexend', sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    background-color: #1e90ff; /* Change background color on hover */
+    transform: translateY(-3px); /* Slightly raise the button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Deepen the shadow */
+  }
+
+  &:active {
+    transform: translateY(0); /* Return to original position when clicked */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Return to original shadow */
+  }
+}
 /* Stats Section */
 .stats {
   display: flex;
