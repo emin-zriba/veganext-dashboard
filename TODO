@@ -8,4 +8,6 @@
 2 - fix the session storage after logout 
 3 - add the logout url to azure : /login 
 4 - add side bar navigation - for existing page 
-5 - Add the service for the wazuh - Data 
+5 - Add the service for the wazuh - Data  
+
+

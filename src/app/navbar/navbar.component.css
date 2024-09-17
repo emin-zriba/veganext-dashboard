@@ -1,68 +1,62 @@
-/* Navbar Styling */
+/* Toolbar container */
 mat-toolbar {
-  background-color: #2a2a2a; /* Dark background for the navbar */
-  color: #eaeaea; /* Light text color for contrast */
-  padding: 0 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
-  .navbar-content {
-    display: flex;
-    align-items: center;
-  }
-
-  .navbar-logo {
-    height: 40px; /* Adjust the size of the logo */
-    margin-right: 20px; /* Space between the logo and other elements */
-  }
-
-  .spacer {
-    flex: 1; /* Pushes the search and settings to the right */
-  }
-
-  mat-icon {
-    color: #eaeaea; /* Icon color matching the text */
-    cursor: pointer;
-    margin-right: 10px; /* Space between icons and input */
-  }
-
-  .search-input {
-    background-color: #333333; /* Slightly lighter background for the input */
-    border-radius: 4px;
-    padding: 5px 10px;
-    color: #eaeaea;
-    border: none;
-    outline: none;
-    width: 200px; /* Adjust width as needed */
-    transition: width 0.3s ease;
-
-    &::placeholder {
-      color: #aaaaaa; /* Placeholder text color */
-    }
-
-    &:focus {
-      width: 250px; /* Expand input on focus */
-      background-color: #444444; /* Darker background on focus */
-    }
-  }
+  align-items: center;
+  padding: 0 16px;
+  height: 64px;
+  background-color: #2a2a2a; /* Change this color as needed */
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-  .navbar-logo {
-    height: 30px; /* Adjust logo size for smaller screens */
-  }
+/* Logo styling */
+.navbar-logo {
+  height: 40px; /* Adjust the size of the logo */
+  margin-right: 16px;
+}
 
-  .search-input {
-    width: 150px; /* Adjust input width for smaller screens */
+/* Spacer to push elements to the right */
+.spacer {
+  flex: 1 1 auto;
+}
 
-    &:focus {
-      width: 180px; /* Adjust focus width for smaller screens */
-    }
-  }
+/* Search input styling */
+.search-input {
+  width: 200px;
+  padding-left: 8px;
+  margin-right: 16px;
+  color: white;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+}
 
-  mat-icon {
-    margin-right: 5px; /* Adjust icon spacing for smaller screens */
-  }
+.search-input::placeholder {
+  color: white;
+}
+
+/* Material icon styling */
+mat-icon {
+  color: white;
+  cursor: pointer;
+}
+
+/* Button styling */
+button {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Logout button icon */
+button mat-icon {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Button hover effect */
 }

@@ -5,6 +5,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { MsalProviderModule } from './msal-instance';
 
@@ -20,6 +21,7 @@ import { MsalProviderModule } from './msal-instance';
     SidebarComponent,
     DashboardComponent,
     LoginComponent,
+    HttpClientModule,
     MsalProviderModule
   ]
 })
@@ -50,8 +52,8 @@ export class AppComponent implements OnInit {
   }
 
   logout(): void {
-    // Clear session storage
     sessionStorage.clear();
+    
 
     // Perform MSAL logout to clear cached tokens
     this.msalService.logoutRedirect({
