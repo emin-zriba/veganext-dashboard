@@ -1,22 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OnlineMachinesListComponent } from '../online-machines-list/online-machines-list.component';
-import { AgentOnShiftComponent } from '../agent-on-shift/agent-on-shift.component';
 import { MsalService } from '@azure/msal-angular';
-import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { WazuhApiService } from '../services/wazuh-api.service';
+import { CommonModule } from '@angular/common';
+import { OnlineMachinesListComponent } from "../online-machines-list/online-machines-list.component";
+import { AgentOnShiftComponent } from "../agent-on-shift/agent-on-shift.component";
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
   standalone: true,
-  imports: [CommonModule, OnlineMachinesListComponent, AgentOnShiftComponent, HttpClientModule], 
-  providers: [WazuhApiService] 
+  imports: [CommonModule, OnlineMachinesListComponent, AgentOnShiftComponent],
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
   username: string = '';
+  alerts: any[] = [];
+  incidentsCount: number = 0;
+  criticalAlertsCount: number = 0;
+  incidentsChange: number = -15; 
+  alertsChange: number = -10; 
 
   constructor(
     private msalService: MsalService,
@@ -27,12 +30,18 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     const accounts = this.msalService.instance.getAllAccounts();
     if (accounts.length > 0) {
-      //this.username = accounts[0].username; // this return the email of the first account in the array of accounts and i want only the the first part of the email which is the username
       this.username = accounts[0].username.split("@")[0];
     }
 
     this.wazuhApiService.getAlerts().subscribe(data => {
       console.log('Alerts:', data);
+      this.alerts = data;
+      this.criticalAlertsCount = data.length; // Assuming each alert is critical
+    });
+
+    this.wazuhApiService.getIncidents().subscribe(data => {
+      console.log('Incidents:', data);
+      this.incidentsCount = data.length; // Assuming data is an array of incidents
     });
   }
 

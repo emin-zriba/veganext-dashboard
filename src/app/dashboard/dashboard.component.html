@@ -3,22 +3,25 @@
     <div class="welcome-message">
       <h2>Welcome, {{ username }}</h2>
     </div>
-    <div class="logout-button">
-      <button (click)="logout()" class="btn-logout">Logout</button>
-    </div>
   </div>
   <div class="stats">
     <div class="stat-item">
       <h2>Number of Incidents</h2>
-      <div class="stat-value">12,345</div>
-      <div class="stat-change" [ngClass]="{'decrease': true}">▼ 15%</div>
+      <div class="stat-value">{{ incidentsCount }}</div>
+      <div class="stat-change" [ngClass]="{'decrease': incidentsChange < 0, 'increase': incidentsChange >= 0}">
+        {{ incidentsChange < 0 ? '▼' : '▲' }} {{ incidentsChange }}%
+      </div>
     </div>
     <div class="stat-item">
       <h2>Critical Alerts</h2>
-      <div class="stat-value">8,910</div>
-      <div class="stat-change" [ngClass]="{'decrease': true}">▼ 10%</div>
+      <div class="stat-value">{{ criticalAlertsCount }}</div>
+      <div class="stat-change" [ngClass]="{'decrease': alertsChange < 0, 'increase': alertsChange >= 0}">
+        {{ alertsChange < 0 ? '▼' : '▲' }} {{ alertsChange }}%
+      </div>
     </div>
   </div>
-  <app-online-machines-list></app-online-machines-list>
+  <div class="table-container">
+    <app-online-machines-list></app-online-machines-list>
+  </div>
   <app-agent-on-shift></app-agent-on-shift>
 </div>

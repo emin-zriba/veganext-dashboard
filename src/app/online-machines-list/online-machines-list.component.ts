@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { WazuhApiService } from '../services/wazuh-api.service';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 interface Machine {
   ip: string;
@@ -19,11 +20,14 @@ interface Machine {
   templateUrl: './online-machines-list.component.html',
   styleUrls: ['./online-machines-list.component.css'],
   standalone: true,
-  imports: [MatIconModule, MatDividerModule, MatButtonModule, CommonModule, MatTableModule, HttpClientModule],
+  imports: [MatIconModule, MatDividerModule, MatButtonModule, CommonModule, MatTableModule, HttpClientModule, MatPaginatorModule],
 })
-export class OnlineMachinesListComponent implements OnInit {
+export class OnlineMachinesListComponent implements OnInit, AfterViewInit {
   machines: Machine[] = [];
   displayedColumns: string[] = ['ip', 'hostname', 'os', 'status'];
+  dataSource = new MatTableDataSource<Machine>(this.machines);
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private wazuhApiService: WazuhApiService) {}
 
@@ -31,10 +35,15 @@ export class OnlineMachinesListComponent implements OnInit {
     this.fetchMachines();
   }
 
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
   fetchMachines(): void {
-    this.wazuhApiService.getmachines().subscribe(
+    this.wazuhApiService.getMachines().subscribe(
       (data: Machine[]) => {
         this.machines = data;
+        this.dataSource.data = this.machines;
       },
       (error) => {
         console.error('Error fetching machines', error);
